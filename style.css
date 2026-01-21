@@ -1,0 +1,789 @@
+/* ===== GRANDE RED ELEGANT THEME ===== */
+:root {
+    /* Rich Red Color Palette */
+    --burgundy: #800020;
+    --dark-red: #722f37;
+    --wine: #6d2c3a;
+    --rosewood: #65000b;
+    --maroon: #800000;
+    --gold: #d4af37;
+    --soft-gold: #f4e4b8;
+    --cream: #f8f4e9;
+    --velvet: #3a0c0c;
+    --text-light: #e8d8d8;
+    --text-dark: #3a1a1a;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2c0f0f 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ===== BACKGROUND ELEMENTS ===== */
+.gold-flecks {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fleck {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+}
+
+.velvet-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(128, 0, 32, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(109, 44, 58, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== MAIN GRAND CARD ===== */
+.grand-card {
+    max-width: 900px;
+    margin: var(--space-xl) auto;
+    background: linear-gradient(145deg, 
+        rgba(58, 12, 12, 0.95) 0%,
+        rgba(128, 0, 32, 0.85) 100%);
+    border-radius: 2px;
+    padding: var(--space-xl);
+    position: relative;
+    z-index: 2;
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(212, 175, 55, 0.1),
+        inset 0 0 100px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    overflow: hidden;
+}
+
+.grand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--gold), 
+        transparent);
+    z-index: 3;
+}
+
+/* ===== GRAND HEADER ===== */
+.grand-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    position: relative;
+}
+
+.ornament-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.ornament-line {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--gold), 
+        transparent);
+}
+
+.ornament-icon {
+    color: var(--gold);
+    font-size: 1rem;
+    animation: gentlePulse 3s infinite;
+}
+
+.header-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.subtitle-decoration {
+    color: var(--soft-gold);
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.subtitle-text {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--soft-gold);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+}
+
+.grand-title {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: var(--space-md);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title-line {
+    display: block;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.header-flourish {
+    color: var(--gold);
+    font-size: 2rem;
+    opacity: 0.5;
+    margin-top: var(--space-sm);
+}
+
+/* ===== GRAND COUPLE SECTION ===== */
+.grand-couple {
+    text-align: center;
+    margin: var(--space-xl) 0;
+    position: relative;
+}
+
+.name-container {
+    margin-bottom: var(--space-lg);
+}
+
+.cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--cream);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    margin: var(--space-sm) 0;
+    letter-spacing: 1px;
+}
+
+.name-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+}
+
+/* OPTION 1: Guna font dengan swash */
+.ampersand-font {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700; /* Penting! Weight mesti 700 untuk swash */
+    font-size: 3.5rem;
+    color: #d4af37;
+    display: inline-block;
+    margin: 0 20px;
+    line-height: 1;
+}
+
+/* OPTION 2: Guna Unicode character */
+.ampersand-swash {
+    font-family: 'Georgia', serif; /* Font apa pun */
+    font-size: 3rem;
+    color: #d4af37;
+    margin: 0 20px;
+}
+
+/* Garis connector */
+.line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Container styling */
+.ampersand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nama {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #722f37;
+    text-align: center;
+    margin: 10px 0;
+}
+.connector-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--soft-gold), 
+        transparent);
+}
+
+.connector-heart {
+    color: var(--gold);
+    font-size: 1.8rem;
+    animation: gentlePulse 2s infinite;
+}
+
+/* Tambah dalam style.css */
+.ampersand-elegant {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700; /* Wajib 700 untuk dapat swash! */
+    font-size: 3rem;
+    color: var(--gold);
+    display: inline-block;
+    margin: 0 20px;
+    line-height: 1;
+    animation: gentlePulse 3s infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+
+
+.wedding-date {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    color: var(--soft-gold);
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+}
+
+.date-icon {
+    color: var(--gold);
+}
+
+.date-flower {
+    color: var(--soft-gold);
+    opacity: 0.6;
+}
+
+/* ===== GRAND PHOTO SECTION ===== */
+.grand-photo {
+    margin: var(--space-x1) 0;
+}
+
+.photo-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.photo-frame {
+    position: relative;
+}
+
+.frame-border {
+    position: relative;
+    padding: 3px;
+    background: linear-gradient(45deg, var(--gold), var(--soft-gold), var(--gold));
+}
+
+.photo-content {
+    background: rgba(0, 0, 0, 0.7);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.frame-corner {
+    position: absolute;
+    color: var(--gold);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.frame-corner.tl { top: -8px; left: -8px; }
+.frame-corner.tr { top: -8px; right: -8px; }
+.frame-corner.bl { bottom: -8px; left: -8px; }
+.frame-corner.br { bottom: -8px; right: -8px; }
+
+.photo-placeholder {
+    text-align: center;
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.photo-placeholder i {
+    font-size: 4rem;
+    color: var(--soft-gold);
+    margin-bottom: var(--space-sm);
+}
+
+/* ===== GRAND DETAILS ===== */
+.grand-details {
+    margin: var(--space-xl) 0;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.detail-item {
+    background: rgba(0, 0, 0, 0.4);
+    padding: var(--space-lg);
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover::before {
+    transform: scaleX(1);
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.detail-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: var(--space-sm);
+    opacity: 0.8;
+}
+
+.detail-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--cream);
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+}
+
+.detail-content p {
+    color: var(--text-light);
+    margin-bottom: var(--space-sm);
+    opacity: 0.8;
+}
+
+.location-link {
+    display: inline-block;
+    color: var(--soft-gold);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 1px dotted var(--gold);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    color: var(--gold);
+    border-bottom-style: solid;
+}
+
+/* ===== GRAND RSVP ===== */
+.grand-rsvp {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+}
+
+.rsvp-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.rsvp-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--cream);
+    font-weight: 500;
+    text-align: center;
+}
+
+.rsvp-ornament {
+    color: var(--gold);
+    opacity: 0.6;
+    font-size: 1.5rem;
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    margin-bottom: var(--space-md);
+}
+
+.elegant-input,
+.elegant-select,
+.elegant-textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.elegant-input:focus,
+.elegant-select:focus,
+.elegant-textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.elegant-input::placeholder,
+.elegant-textarea::placeholder {
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.elegant-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23d4af37' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+.elegant-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.elegant-btn {
+    width: 100%;
+    padding: var(--space-sm);
+    background: linear-gradient(135deg, 
+        rgba(212, 175, 55, 0.2) 0%, 
+        rgba(128, 0, 32, 0.6) 100%);
+    color: var(--cream);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    letter-spacing: 1px;
+}
+
+.elegant-btn:hover {
+    background: linear-gradient(135deg, 
+        rgba(212, 175, 55, 0.3) 0%, 
+        rgba(128, 0, 32, 0.7) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--gold);
+}
+
+.rsvp-note {
+    text-align: center;
+    margin-top: var(--space-md);
+    color: var(--text-light);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+}
+
+.rsvp-note i {
+    color: var(--gold);
+}
+
+/* ===== GRAND FOOTER ===== */
+.grand-footer {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+}
+
+.verse-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.verse-icon {
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 1.5rem;
+}
+
+.verse-text {
+    max-width: 600px;
+}
+
+.verse-text p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--cream);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+}
+
+.verse-ref {
+    color: var(--soft-gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.thank-you {
+    color: var(--soft-gold);
+    font-size: 1.2rem;
+    margin: var(--space-lg) 0;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.signature {
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--space-lg);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.couple-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+}
+
+.signature-name {
+    display: inline-block;
+    margin: 0 var(--space-sm);
+}
+
+.signature-amp {
+    color: var(--gold);
+    font-size: 2rem;
+    margin: 0 var(--space-xs);
+}
+
+.signature-date {
+    color: var(--soft-gold);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ===== MUSIC CONTROL ===== */
+.music-control {
+    position: fixed;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    z-index: 100;
+}
+
+.music-btn {
+    background: rgba(58, 12, 12, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 0;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--soft-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.music-btn:hover {
+    background: rgba(128, 0, 32, 0.9);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes gentlePulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .grand-card {
+        margin: var(--space-lg);
+        padding: var(--space-lg);
+    }
+    
+    .title-line {
+        font-size: 3.5rem;
+    }
+    
+    .cursive {
+        font-size: 3.8rem;
+    }
+    
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .grand-card {
+        margin: var(--space-md);
+        padding: var(--space-md);
+        border-radius: 0;
+    }
+    
+    .title-line {
+        font-size: 3rem;
+    }
+    
+    .cursive {
+        font-size: 3.2rem;
+    }
+    
+    .name-connector {
+        gap: var(--space-sm);
+    }
+    
+    .connector-line {
+        width: 80px;
+    }
+    
+    .verse-container {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .verse-icon {
+        transform: rotate(90deg);
+    }
+    
+    .music-control {
+        bottom: var(--space-sm);
+        right: var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .title-line {
+        font-size: 2.5rem;
+    }
+    
+    .cursive {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle-text {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+    
+    .wedding-date {
+        font-size: 1.1rem;
+        padding: var(--space-xs) var(--space-md);
+    }
+    
+    .couple-names {
+        font-size: 2rem;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .gold-flecks,
+    .velvet-overlay,
+    .music-control {
+        display: none;
+    }
+    
+    .grand-card {
+        box-shadow: none;
+        border: 2px solid #000;
+        background: white !important;
+        color: black !important;
+    }
+    
+    * {
+        color: black !important;
+        border-color: black !important;
+    }
+}
